@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌤️ Estilos globales */
+body {
+  @apply bg-gray-50 text-gray-800 font-sans min-h-screen;
+}
+
+/* Contenedor general del app */
+#app {
+  @apply max-w-3xl mx-auto p-6;
+}
