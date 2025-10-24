@@ -48,12 +48,12 @@ IA_API_KEY=tu_clave_personal_de_openrouter
 Las plataformas como GitHub y OpenRouter bloquean automáticamente las claves expuestas públicamente.
 
 
-5️⃣ Generar la clave de aplicación
+### 5️⃣ Generar la clave de aplicación
 ```
 php artisan key:generate
 ```
 
-6️⃣ Configurar base de datos en .env
+### 6️⃣ Configurar base de datos en .env
 
 Ejemplo:
 ```
@@ -65,12 +65,12 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-7️⃣ Ejecutar migraciones
+### 7️⃣ Ejecutar migraciones
 ```
 php artisan migrate
 ```
 
-8️⃣ Iniciar el servidor local
+### 8️⃣ Iniciar el servidor local
 ```
 php artisan serve
 ```
@@ -80,7 +80,7 @@ Tu API quedará disponible en:
 👉 http://127.0.0.1:8000/api
 ```
 
-🌐 Variables de entorno clave
+###c🌐 Variables de entorno clave
 ```
 APP_URL=http://127.0.0.1:8000
 
@@ -92,7 +92,7 @@ IA_API_KEY=         # <-- Reemplaza manualmente con tu clave local
 IA_MODEL=gpt-4o-mini
 ```
 
-🔍 Endpoints principales
+### 🔍 Endpoints principales
 ```
 Método	Endpoint	Descripción
 POST	/api/chat/send	Envía un mensaje y obtiene respuesta del chatbot
@@ -102,14 +102,15 @@ GET	/api/chat/history	Lista todas las conversaciones registradas
 ```
 
 El prompt está cuidadosamente estructurado siguiendo buenas prácticas de prompt engineering:
-
+```
 Eres MeteoBot. Responde en español, breve y claro.
 - Personalidad: amable y profesional.
 - Objetivo: responder preguntas del clima usando datos de Open-Meteo si existen.
 - Si no tienes datos exactos, indícalo y sugiere cómo obtenerlos.
 - Usa **negritas** para valores importantes y máximo 2 emojis.
+```
 
-🧪 Prueba rápida con Postman
+### 🧪 Prueba rápida con Postman
 
 Endpoint:
 ```
@@ -133,7 +134,7 @@ Respuesta esperada:
 }
 ```
 
-🧩 Estructura del proyecto
+### 🧩 Estructura del proyecto
 ```
 app/
  ├── DTOs/
@@ -164,8 +165,9 @@ database/
  └── seeders/
 ```
 
-🧱 Principios aplicados
+### 🧱 Principios aplicados
 
+```
 ✅ SOLID + Clean Architecture
 ✅ Inyección de dependencias (AppServiceProvider)
 ✅ DTOs y Enums para claridad y validación
@@ -175,22 +177,26 @@ database/
 ✅ Eloquent ORM optimizado
 ✅ Mensajes y respuestas 100% en español
 ✅ Commits atómicos y descriptivos (feat, fix, chore, refactor, etc.)
+```
 
-💬 Ejemplo de flujo completo
+### 💬 Ejemplo de flujo completo
 
+```
 1️⃣ El usuario inicia un nuevo chat.
 2️⃣ Envía: “¿Necesitaré paraguas en Berlín mañana?”
 3️⃣ El sistema detecta una pregunta sobre clima.
 4️⃣ Se consulta Open-Meteo para obtener datos reales.
 5️⃣ OpenAI genera la respuesta en lenguaje natural.
 6️⃣ La conversación se guarda en base de datos y puede consultarse luego.
+```
 
-Respuesta generada:
-
+### Respuesta generada:
+```
 ☔ En Berlín, se espera lluvia ligera mañana. ¡Te recomiendo llevar paraguas!
+```
 
-🔒 Seguridad
-
+### 🔒 Seguridad
+```
 No se suben archivos sensibles (.env, vendor, node_modules)
 
 Las claves API se configuran localmente y no se exponen en commits
@@ -198,14 +204,18 @@ Las claves API se configuran localmente y no se exponen en commits
 Manejo de excepciones con mensajes seguros y en español
 
 Logs controlados y sin dump() ni dd()
+```
 
-🧑‍💻 Autor
-
+### 🧑‍💻 Autor
+```
 Juan Pablo Pérez Santos
 Desarrollador Fullstack
 📧 juanpabloperezdevelopment@gmail.com
 
 💼 https://www.linkedin.com/in/juan-pablo-perez-santos-b68a30189/
+```
 
 🧾 Nota final:
+```
 Este backend fue diseñado siguiendo los lineamientos de la prueba técnica, con una arquitectura clara, desacoplada y documentada, asegurando una experiencia fluida tanto para el usuario como para el evaluador.
+```
