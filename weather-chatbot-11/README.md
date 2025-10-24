@@ -25,57 +25,63 @@ Flujo resumido:
 ```bash
 git clone https://github.com/juanpabloperez98/weather-chatbot-fullstack.git
 cd weather-chatbot-fullstack/weather-chatbot-11
+```
 
-
-2️⃣ Instalar dependencias
+### 2️⃣ Instalar dependencias
+```
 composer install
+```
 
-3️⃣ Crear el archivo de entorno
+### 3️⃣ Crear el archivo de entorno
+```
 cp .env.example .env
+```
+
+### 4️⃣ Configurar las claves de entorno
+Por razones de seguridad, este repositorio no incluye claves activas de OpenAI/OpenRouter.
+Debes generar tu propia clave de acceso desde https://openrouter.ai/keys e incluirla en tu archivo .env.
+ 
+```
+IA_API_KEY=tu_clave_personal_de_openrouter
+```
+⚠️ Esta clave es personal e intransferible. No debe compartirse ni subirse a GitHub.
+Las plataformas como GitHub y OpenRouter bloquean automáticamente las claves expuestas públicamente.
 
 
-🧩 Importante:
-Por políticas de seguridad, este archivo no incluye una clave activa de OpenAI.
-Para ejecutar el proyecto localmente, debes reemplazar la variable IA_API_KEY en tu archivo .env con la siguiente clave de prueba local:
-
-La variable que debes modificar es:
-
-IA_API_KEY=[tu clave de IA de prueba]
-
-
-👉 En tu entorno local puedes usar esta clave de prueba educativa:
-
-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
-
-
-⚠️ Esta clave es solo para uso local o educativo y no debe subirse a GitHub.
-(GitHub puede bloquear commits que incluyan esta cadena en texto plano.)
-
-4️⃣ Generar la clave de aplicación
+5️⃣ Generar la clave de aplicación
+```
 php artisan key:generate
+```
 
-5️⃣ Configurar base de datos en .env
+6️⃣ Configurar base de datos en .env
 
 Ejemplo:
-
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=weather_chatbot
 DB_USERNAME=root
 DB_PASSWORD=
+```
 
-6️⃣ Ejecutar migraciones
+7️⃣ Ejecutar migraciones
+```
 php artisan migrate
+```
 
-7️⃣ Iniciar el servidor local
+8️⃣ Iniciar el servidor local
+```
 php artisan serve
-
+```
 
 Tu API quedará disponible en:
+```
 👉 http://127.0.0.1:8000/api
+```
 
 🌐 Variables de entorno clave
+```
 APP_URL=http://127.0.0.1:8000
 
 OPEN_METEO_URL=https://api.open-meteo.com/v1/forecast
@@ -84,13 +90,16 @@ GEOCODING_URL=https://geocoding-api.open-meteo.com/v1/search
 IA_API_URL=https://api.openai.com/v1/chat/completions
 IA_API_KEY=         # <-- Reemplaza manualmente con tu clave local
 IA_MODEL=gpt-4o-mini
+```
 
 🔍 Endpoints principales
+```
 Método	Endpoint	Descripción
 POST	/api/chat/send	Envía un mensaje y obtiene respuesta del chatbot
 GET	/api/chat/{id}	Recupera el historial de una conversación específica
 GET	/api/chat/history	Lista todas las conversaciones registradas
 🧠 Prompt del modelo
+```
 
 El prompt está cuidadosamente estructurado siguiendo buenas prácticas de prompt engineering:
 
@@ -103,7 +112,7 @@ Eres MeteoBot. Responde en español, breve y claro.
 🧪 Prueba rápida con Postman
 
 Endpoint:
-
+```
 POST http://127.0.0.1:8000/api/chat/send
 
 
@@ -122,6 +131,7 @@ Respuesta esperada:
     "content": "En **Bogotá**, la temperatura actual es de **13.7°C**, con cielo nublado 🌥️ y vientos suaves."
   }
 }
+```
 
 🧩 Estructura del proyecto
 app/
