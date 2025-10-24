@@ -134,6 +134,7 @@ Respuesta esperada:
 ```
 
 🧩 Estructura del proyecto
+```
 app/
  ├── DTOs/
  │   └── WeatherQueryDTO.php
@@ -161,6 +162,7 @@ database/
  │   ├── create_conversations_table.php
  │   └── create_messages_table.php
  └── seeders/
+```
 
 🧱 Principios aplicados
 
